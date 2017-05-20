@@ -7,7 +7,7 @@ import stampa.Stampa;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Immagine image = new Immagine("C:/Users/alex/Desktop/SfereGazebo/SferaAaccesa.jpg");
+		Immagine image = new Immagine("C:/Users/alex/Desktop/SfereGazebo/ColoreSfere.jpg");
 		MatricePixel matrice = new MatricePixel();
 		Stampa stampa = new Stampa();
 		int a = image.getAltezza();
@@ -15,9 +15,11 @@ public class Main {
 		int[][] matriceRossa = matrice.creaMatriceRossa(image);
 		int[][] matriceBlu = matrice.creaMatriceVerde(image);
 		int[][] matriceVerde = matrice.creaMatriceBlu(image);
+		int[][] matriceRGB = matrice.creaMatriceRGB(image);
 		stampa.stampaMatriceFile(matriceRossa,"rosso");
 		stampa.stampaMatriceFile(matriceBlu,"blu");
 		stampa.stampaMatriceFile(matriceVerde,"verde");
+		stampa.stampaMatriceFile(matriceRGB,"RGB");
 		System.out.println("Larghezza:"+ b +" Altezza:"+ a);
 	}
 }

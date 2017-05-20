@@ -2,7 +2,7 @@ package stampa;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/*Stampa su file*/
 public class Stampa {
 	public Stampa(){
 
@@ -38,7 +38,8 @@ public class Stampa {
 		String s;
 		if(colore.equals("rosso")) s="MatriceRossa.txt";
 		else if(colore.equals("blu")) s="MatriceBlu.txt";
-		else s="MatriceVerde.txt";
+		else if(colore.equals("verde")) s="MatriceVerde.txt";
+		else s="MatriceRGB.txt";
 		return s;
 	}
 }

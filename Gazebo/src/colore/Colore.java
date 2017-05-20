@@ -1,5 +1,5 @@
 package colore;
-
+/* Rappresenta il colore dati le componenti RGB */
 public class Colore {
 	private String nome;
 	private int rosso;

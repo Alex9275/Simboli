@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-
+/* Rappresenta l'immagine che vogliamo analizzare*/
 public class Immagine {
 	private BufferedImage image;
 	private int altezza;
