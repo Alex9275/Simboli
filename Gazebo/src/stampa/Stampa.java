@@ -2,7 +2,10 @@ package stampa;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-/*Stampa su file*/
+import java.util.List;
+
+import elementi.VariabileDiStato;
+
 public class Stampa {
 	public Stampa(){
 
@@ -16,30 +19,23 @@ public class Stampa {
 		}
 	}
 
-	public void stampaMatriceFile(int[][] x,String colore) throws IOException {
+	public void stampaListaSuFile(List<VariabileDiStato> x,String file) throws IOException {
 		FileWriter w;
 		String s;
-		colore=nomeFile(colore);
-		w=new FileWriter(colore);
+		
+		w=new FileWriter(file);
 		BufferedWriter b;
 		b=new BufferedWriter(w);
-		for(int i=0;i<x[i].length;i++) {
-			for(int j=0;j<x.length;j++) {
-				s=Integer.toString(x[j][i]);
+		
+			for(VariabileDiStato v : x) {
+				s= v.toString();
 				if(s!="")
 					b.write(s+"   ");
 			}
 			b.write("\n");
-		}
+		
 		b.flush();
 		b.close();
 	}
-	private String nomeFile(String colore) {
-		String s;
-		if(colore.equals("rosso")) s="MatriceRossa.txt";
-		else if(colore.equals("blu")) s="MatriceBlu.txt";
-		else if(colore.equals("verde")) s="MatriceVerde.txt";
-		else s="MatriceRGB.txt";
-		return s;
-	}
+
 }
