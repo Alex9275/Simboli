@@ -1,37 +1,23 @@
 package elementi;
-
-import java.util.LinkedList;
 import java.util.List;
-
 import generatore.GeneratoreVariabiliDiStato;
-
-
+//Descrive le maschere
 public class Maschera {
 	private String nome;
 	private Opzione opzione;
 	private List<VariabileDiStato> variabiliCheCambiano;
-	private int dimensioneLista;
-	public Maschera(String nome, Opzione opz,int dim){
+	public Maschera(String nome, Opzione opz){
 		this.nome = nome;
 		this.opzione = opz;
-		this.dimensioneLista=dim;
 		this.variabiliCheCambiano = aggiornaLista();
 	}
 	
+	//inserisce nella lista delle variabili quelle che vengono cambiate dall'opzione a cui essa si riferisce
 	public List<VariabileDiStato> aggiornaLista(){
+		//Genera la lista 
 		GeneratoreVariabiliDiStato generatore = new GeneratoreVariabiliDiStato(this.opzione.GeneraListaImmagineIniziale(),this.opzione.GeneraListaImmagineFinale());
-		List<VariabileDiStato> v = generatore.genera(this.dimensioneLista);
-		setDimensioneLista(v.size());
+		List<VariabileDiStato> v = generatore.genera();
 		return v;
-	}
-	
-	
-	public int getDimensioneLista() {
-		return this.dimensioneLista;
-	}
-
-	public void setDimensioneLista(int dimensioneLista) {
-		this.dimensioneLista = dimensioneLista;
 	}
 
 	public String getNome() {

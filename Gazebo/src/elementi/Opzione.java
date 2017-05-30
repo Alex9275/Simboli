@@ -1,11 +1,10 @@
 package elementi;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import immagini.Immagine;
 import immagini.ListaPixel;
-
+//Classe che rappresenta le opzioni
 public class Opzione {
 	private String nome;
 	private Immagine immIniziale;
@@ -24,18 +23,20 @@ public class Opzione {
 		this.nome = nome;
 	}
 	public Immagine getImmIniziale() {
-		return immIniziale;
+		return this.immIniziale;
 	}
 	public void setImmIniziale(Immagine immIniziale) {
 		this.immIniziale = immIniziale;
 	}
 	public Immagine getImmFinale() {
-		return immFinale;
+		return this.immFinale;
 	}
 	public void setImmFinale(Immagine immFinale) {
 		this.immFinale = immFinale;
 	}
 	
+	
+	//Genera la lista di pixel dell'immagine iniziale(sotto forma di un vettore rgb)
 	public List<Integer> GeneraListaImmagineIniziale(){
 		
 		ListaPixel iniziale = new ListaPixel();
@@ -45,9 +46,8 @@ public class Opzione {
 		return iniziale.getListaPixel();
 	}
 	
-	
+	//Genera la lista di pixel dell'immagine finale(sotto forma di un vettore rgb)
 	public List<Integer> GeneraListaImmagineFinale(){
-		
 		ListaPixel finale = new ListaPixel();
 		finale.creaMatriceBlu(immFinale);
 		finale.creaMatriceRossa(immFinale);

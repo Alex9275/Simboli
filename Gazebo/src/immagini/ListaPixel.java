@@ -6,11 +6,10 @@ import java.util.List;
 
 public class ListaPixel {
 	private Pixel pixels;
-    private List<Integer> listaPixel;
-	
+	private List<Integer> listaPixel;
+
 	public ListaPixel(){
 		listaPixel = new LinkedList<Integer>();
-
 	}
 
 	public void creaMatriceRossa(Immagine imm){
@@ -19,11 +18,10 @@ public class ListaPixel {
 			for( int j = 0; j < imm.getAltezza(); j++ ){
 				c = new Color(imm.getImage().getRGB(i,j));
 				this.listaPixel.add(c.getRed());
-				
+
 			}
-		
 	}
-	
+
 	public void creaMatriceBlu(Immagine imm){
 		Color c;
 		for( int i = 0; i < imm.getLunghezza(); i++ )
@@ -32,7 +30,7 @@ public class ListaPixel {
 				this.listaPixel.add(c.getBlue());
 			}
 	}
-	
+
 	public void creaMatriceVerde(Immagine imm){
 		Color c;
 		for( int i = 0; i < imm.getLunghezza(); i++ )
