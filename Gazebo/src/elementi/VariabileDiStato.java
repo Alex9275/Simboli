@@ -12,6 +12,43 @@ public class VariabileDiStato {
 		this.pixel = new Pixel(i);
 				
 	}
+	
+
+	public int getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
+	public Pixel getPixel() {
+		return pixel;
+	}
+
+
+
+
+	public void setPixel(Pixel pixel) {
+		this.pixel = pixel;
+	}
+
+
+
+
+	@Override
+	public boolean equals(Object o) {
+		VariabileDiStato v = (VariabileDiStato) o;
+		return this.pixel.equals(v.getPixel());
+	}
+
+
 
 
 	@Override

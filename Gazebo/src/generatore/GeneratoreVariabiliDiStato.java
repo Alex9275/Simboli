@@ -13,9 +13,9 @@ public class GeneratoreVariabiliDiStato {
 		this.listaPartenza = l1;
 		this.listaArrivo = l2;
 	}
-	public List<VariabileDiStato> genera(){
+	public List<VariabileDiStato> genera(int dim){
 		List<VariabileDiStato> list = new LinkedList<VariabileDiStato>();
-		int cont = 0;
+		int cont = dim;
 		for(Integer i : this.listaPartenza){
 			for(Integer j : this.listaArrivo){
 				if(!(i.equals(j))){

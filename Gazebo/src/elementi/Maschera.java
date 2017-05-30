@@ -10,17 +10,30 @@ public class Maschera {
 	private String nome;
 	private Opzione opzione;
 	private List<VariabileDiStato> variabiliCheCambiano;
-	public Maschera(String nome, Opzione opz){
+	private int dimensioneLista;
+	public Maschera(String nome, Opzione opz,int dim){
 		this.nome = nome;
 		this.opzione = opz;
-		this.variabiliCheCambiano = new LinkedList<VariabileDiStato>();
+		this.dimensioneLista=dim;
+		this.variabiliCheCambiano = aggiornaLista();
 	}
 	
-	public void aggiornaLista(){
+	public List<VariabileDiStato> aggiornaLista(){
 		GeneratoreVariabiliDiStato generatore = new GeneratoreVariabiliDiStato(this.opzione.GeneraListaImmagineIniziale(),this.opzione.GeneraListaImmagineFinale());
-		this.variabiliCheCambiano = generatore.genera();
+		List<VariabileDiStato> v = generatore.genera(this.dimensioneLista);
+		setDimensioneLista(v.size());
+		return v;
 	}
 	
+	
+	public int getDimensioneLista() {
+		return this.dimensioneLista;
+	}
+
+	public void setDimensioneLista(int dimensioneLista) {
+		this.dimensioneLista = dimensioneLista;
+	}
+
 	public String getNome() {
 		return nome;
 	}
